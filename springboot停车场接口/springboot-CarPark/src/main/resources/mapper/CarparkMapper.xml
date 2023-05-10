@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootcarpark.dao.CarParkMapper">
+    <resultMap id="CarparkEntityMap" type="com.example.springbootcarpark.entity.CarPark">
+        <id column="id" property="id"/>
+        <result column="residue_vehicle_num" property="residueVehicleNum"/>
+        <result column="point_name" property="pointName"/>
+        <result column="point_detail" property="pointDetail"/>
+        <result column="create_by" property="createBy"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_by" property="updateBy"/>
+        <result column="update_time" property="updateTime"/>
+
+    </resultMap>
+<select id="getParkByDetail" resultMap="CarparkEntityMap">
+    select * from  t_carpark
+    where point_detail like  '%${pointDetail}%'
+
+</select>
+    <select id="getall"  resultMap="CarparkEntityMap">
+        select * from  t_carpark
+    </select>
+</mapper>
