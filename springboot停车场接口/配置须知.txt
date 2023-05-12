@@ -1,3 +1,0 @@
-springboot2.7.0
-Mysql5.7.19
-Maven3.6.3
